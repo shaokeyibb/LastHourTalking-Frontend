@@ -1,18 +1,12 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<template class="all">
+  <div class="top-bar" @click="this.$router.push('/')">
+    <NGradientText :size=48 type="success">LastHourTalking</NGradientText>
+    <br/>
+    <NGradientText :size=24 type="warning">You can only talk to people from the last hour...</NGradientText>
+    <NDivider/>
+  </div>
+  <router-view/>
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
 <style>
 #app {
@@ -21,6 +15,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+.top-bar {
+  position: sticky;
 }
 </style>
